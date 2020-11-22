@@ -44,7 +44,7 @@ To run this project, you'll just need a **Docker** installed on you machine, if 
 
 ## Getting Start
 
-Right down, i'll write the Quickstart based on steps to make it easier to understand and execute on any machine.
+The *Getting Start* is based on steps to make it easier to understand and execute on any machine.
 
 **1º -** Download all this code to any folder from your computer.
 
@@ -68,7 +68,7 @@ Now, the database container and the system container are getting up. Wait some s
 docker exec -it pizza-api sh
 ```
 
-**5º -** To create your **own user**, you need to type this command:
+**5º -** To create your **own user**, you need to execute this command:
 
 ```
 python manage.py createsuperuser
@@ -76,13 +76,19 @@ python manage.py createsuperuser
 
 **6º -** Now you already has permission to access the manager and see the structure developed based on my database modeling below.
 
-**7º -** To run the python tests developed inside the code, have to type this following command:
+**7º -** To run the python tests developed inside the code, you have to execute this following command:
 
 ```
 python manage.py test
 ```
 
-There are 6 testsCases inside the code. All endpoints has been tested, one on each.
+There are **6 testsCases** inside the code. All endpoints has been tested, **one on each**.
+
+## Tests
+
+I've made all the tests on Postman and attached below you can download my Workspace.
+
+[Download]()
 
 ## Knowledge
 
