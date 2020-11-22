@@ -86,7 +86,7 @@ docker logs -f --tail 100 pizza-api
 
 Database Modeling
 
-![Data Modeling](https://ibb.co/hM63Zs6)
+![Data Modeling](https://github.com/gabrielcandrade/pizza-api/blob/master/media/database.png?raw=true)
 
 ## Django administration access
 * Login: ```root```
