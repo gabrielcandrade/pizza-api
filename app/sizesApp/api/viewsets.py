@@ -14,5 +14,5 @@ class SizeViewSet(ModelViewSet):
 
     # Filter plugin
     filter_backends = (DjangoFilterBackend,SearchFilter,)
-    filter_fields = ('name', 'slices', 'value')
-    search_fields = ('name', 'slices', 'value')
+    filter_fields = ('name', 'slices')
+    search_fields = ('name', 'slices')

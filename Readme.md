@@ -1,6 +1,6 @@
 # Brazilian Pizza - MoBerries
 
-This projects was asked by MoBerries as a tech review about my REST API habilities. Django REST Framework was used to solve all requirements write below. This Brazilian Pizza API was made as flexible as I could to attend all kind of Pizzerias. I hope you enjoy it. :)
+This projects was asked by MoBerries as a tech review about my REST API abilities. Django REST Framework was used to solve all requirements write below. This Brazilian Pizza API was made as flexible as I could to attend all kind of Pizzerias. I hope you enjoy it. :)
 ## Requirements
 
 ### Pizza
@@ -30,9 +30,7 @@ This projects was asked by MoBerries as a tech review about my REST API habiliti
 
 ## Setup
 
-To run this project, you'll just need a **Docker** installed on you machine, if you don't have it, you can download it here:
-
-* [Docker](https://www.docker.com/products/docker-desktop) - version stable
+To run this project, you'll just need a **Docker** installed on you machine, if you don't have it, you can [download it here](https://www.docker.com/products/docker-desktop):
 
 ## Technologies
 
@@ -90,6 +88,155 @@ I've made all the tests on Postman and attached below you can download my Worksp
 
 [Download]()
 
+## Endpoints
+
+### Size
+
+- **Size List**
+    - **Method:** GET
+    - **URL:** http://localhost:8005/api/size/
+    - **Filter Parameters:** *(optional)*
+        - ?name= 
+        - ?slices=
+        - ?search=
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
+
+- **Size Object**
+    - **Method:** GET / POST / PUT / PATCH / DELETE
+    - **URL:** http://localhost:8005/api/size/<size_id>/
+    - **Returns:**
+        - **200** - OK
+        - **201** - CREATED
+        - **204** - NO CONTENT
+        - **404** - NOT FOUND
+
+### Flavor
+
+- **Flavor List**
+    - **Method:** GET
+    - **URL:** http://localhost:8005/api/flavor/
+    - **Filter Parameters:** *(optional)*
+        - ?name= 
+        - ?value=
+        - ?description=
+        - ?search=
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
+
+- **Flavor Object**
+    - **Method:** GET / POST / PUT / PATCH / DELETE
+    - **URL:** http://localhost:8005/api/flavor/<flavor_id>/
+    - **Returns:**
+        - **200** - OK
+        - **201** - CREATED
+        - **204** - NO CONTENT
+        - **404** - NOT FOUND
+
+### Address
+
+- **Address List**
+    - **Method:** GET
+    - **URL:** http://localhost:8005/api/address/
+    - **Filter Parameters:** *(optional)*
+        - ?city= 
+        - ?state_province=
+        - ?postal_code=
+        - ?country=
+        - ?search=
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
+
+- **Address Object**
+    - **Method:** GET / POST / PUT / PATCH / DELETE
+    - **URL:** http://localhost:8005/api/address/<address_id>/
+    - **Returns:**
+        - **200** - OK
+        - **201** - CREATED
+        - **204** - NO CONTENT
+        - **404** - NOT FOUND
+
+### Client
+
+- **Client List**
+    - **Method:** GET
+    - **URL:** http://localhost:8005/api/address/
+    - **Filter Parameters:** *(optional)*
+        - ?city= 
+        - ?state_province=
+        - ?postal_code=
+        - ?country=
+        - ?search=
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
+
+- **Client Object**
+    - **Method:** GET / POST / PUT / PATCH / DELETE
+    - **URL:** http://localhost:8005/api/address/<address_id>/
+    - **Returns:**
+        - **200** - OK
+        - **201** - CREATED
+        - **204** - NO CONTENT
+        - **404** - NOT FOUND
+
+### Pizza
+
+- **Pizza List**
+    - **Method:** GET
+    - **URL:** http://localhost:8005/api/pizza/
+    - **Filter Parameters:** *(optional)*
+        - ?flavor= 
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
+
+- **Pizza Object**
+    - **Method:** GET / POST / PUT / PATCH / DELETE
+    - **URL:** http://localhost:8005/api/pizza/<pizza_id>/
+    - **Returns:**
+        - **200** - OK
+        - **201** - CREATED
+        - **204** - NO CONTENT
+        - **404** - NOT FOUND
+
+### Order
+
+- **Order List**
+    - **Method:** GET
+    - **URL:** http://localhost:8005/api/order/
+    - **Filter Parameters:** *(optional)*
+        - ?client=
+        - ?status= 
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
+
+- **Order Object**
+    - **Method:** GET / POST / PUT / PATCH / DELETE
+    - **URL:** http://localhost:8005/api/order/<order_id>/
+    - **Returns:**
+        - **200** - OK
+        - **201** - CREATED
+        - **204** - NO CONTENT
+        - **404** - NOT FOUND
+        
+- **Order - Next Status**
+    - **Method:** POST
+    - **URL:** http://localhost:8005/api/order/<order_id>/next_status/
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
+
+- **Order - Track**
+    - **Method:** GET
+    - **URL:** http://localhost:8005/api/order/<order_id>/track/
+    - **Returns:**
+        - **200** - OK
+        - **404** - NOT FOUND
 ## Knowledge
 
 ### Database Modeling
