@@ -20,6 +20,12 @@ class Order(models.Model):
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='in_queue')
     value = models.DecimalField(max_digits=7, decimal_places=2, blank=True, null=True, default=0)
 
+    #For track action
+    created_at = models.DateTimeField(auto_now_add=True)
+    in_production_at = models.DateTimeField(null=True, blank=True)
+    on_delivery_at = models.DateTimeField(null=True, blank=True)
+    delivered_at = models.DateTimeField(null=True, blank=True)
+
     def __str__(self):
         return self.client.name + ' - ' + self.status
 

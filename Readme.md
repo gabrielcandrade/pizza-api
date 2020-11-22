@@ -2,6 +2,9 @@
 
 Espaço destinado a descrição breve do projeto.
 
+# Requisitos
+
+
 ## Introdução
 
 Estas instruções farão com que você consiga buildar o projeto e rodar em sua própria maquina local para propósitos de desenvolvimento e de testes. Acompanhe abaixo as notas sobre como realizar o deploy do sistema.
