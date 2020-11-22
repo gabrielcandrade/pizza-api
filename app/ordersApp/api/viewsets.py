@@ -17,7 +17,7 @@ class OrderViewSet(ModelViewSet):
 
     # Filter plugin
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('client', 'pizzas', 'status')
+    filter_fields = ('client', 'status')
 
     # HTTP PUT
     def update(self, request, *args, **kwargs):
