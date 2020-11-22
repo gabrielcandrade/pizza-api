@@ -7,7 +7,7 @@ class Pizza(models.Model):
     flavor = models.ForeignKey(Flavor, on_delete=models.CASCADE)
     size = models.ForeignKey(Size, on_delete=models.CASCADE)
     quantity = models.IntegerField()
-    value = models.DecimalField(max_digits=5, decimal_places=2)
+    value = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
 
     def __str__(self):
         return self.flavor.name + ' - ' + self.size.name + ' - ' + str(self.quantity)

@@ -22,17 +22,18 @@ class OrderViewSet(ModelViewSet):
     # HTTP PUT
     def update(self, request, *args, **kwargs):
         order = Order.objects.get(pk = kwargs.get('pk'))
+        data = {}
         if (order.status == 'on_delivery' or order.status == 'delivered'):
-            message = "The order: " + str(order.id) + " just left for delivery or has already been delivered"
+            data['message'] = "The order: " + str(order.id) + " just left for delivery or has already been delivered, cannot be updated! Sorry."
             return Response({'message': message}, status=HTTP_405_METHOD_NOT_ALLOWED)
         return super(OrderViewSet, self).update(request, *args, **kwargs)
 
     @action(methods=['POST'], detail=True)
     def next_status(self, request, pk=None):
+        order = Order.objects.get(pk = pk)
         data = {}
         data['message'] = "Order has been already delivered"
         now = timezone.now()
-        order = Order.objects.get(pk = pk)
 
         if (order.status == 'in_queue'):
             order.status = 'in_production'
