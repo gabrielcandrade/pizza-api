@@ -74,27 +74,20 @@ docker exec -it pizza-api sh
 python manage.py createsuperuser
 ```
 
-6º - Now you already has permission to acces the manager and see the structure developed based on my database modeling below.
+6º - Now you already has permission to access the manager and see the structure developed based on my database modeling below.
 
 ## Knowledge
 
-To see log errors
+### Database Modeling
+
+![Data Modeling](https://github.com/gabrielcandrade/pizza-api/blob/master/media/database.png?raw=true)
+
+### Log Errors
 
 ```
 docker logs -f --tail 100 pizza-api
 ```
 
-Database Modeling
-
-![Data Modeling](https://github.com/gabrielcandrade/pizza-api/blob/master/media/database.png?raw=true)
-
-## Django administration access
-* Login: ```root```
-* Senha: ```root```
-
-## Vendo logs de erro da aplicação
-* <code>docker logs -f --tail 100 tramontina-revista-dev</code>
-
 ## Credits
 
-* **Gabriel Andrade** - [Desenvolvedor Back-end](https://malu.ncgroup.com.br/gabriel.andrade)
+* **Gabriel Andrade** - [Back-end Developer](https://github.com/gabrielcandrade/)
