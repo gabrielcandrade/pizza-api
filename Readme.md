@@ -46,15 +46,15 @@ To run this project, you'll just need a **Docker** installed on you machine, if 
 
 Right down, i'll write the Quickstart based on steps to make it easier to understand and execute on any machine.
 
-1º - Download all this code to any folder from your computer.
+**1º -** Download all this code to any folder from your computer.
 
-2º - Execute the docker-compose.yml file with the following command:
+**2º -** Execute the docker-compose.yml file with the following command:
 
 ```
 docker-compose build
 ```
 
-3º - After the build, we need to up our container to access all system running at your localhost, to that, type this command:
+**3º -** After the build, we need to up our container to access all system running at your localhost, to that, type this command:
 
 ```
 docker-compose up -d
@@ -62,19 +62,27 @@ docker-compose up -d
 
 Now, the database container and the system container are getting up. Wait some seconds for database server get up and the system gets connect on it. The nice of it, that, it's not necessary to has PostgreSQL server on your machine to run this project. All dependecies are inside the container.
 
-4º - Now, we need to access the container, executing the following command:
+**4º -** Now, we need to access the container, executing the following command:
 
 ```
 docker exec -it pizza-api sh
 ```
 
-5º - To create your **own user**, you need to type this command:
+**5º -** To create your **own user**, you need to type this command:
 
 ```
 python manage.py createsuperuser
 ```
 
-6º - Now you already has permission to access the manager and see the structure developed based on my database modeling below.
+**6º -** Now you already has permission to access the manager and see the structure developed based on my database modeling below.
+
+**7º -** To run the python tests developed inside the code, have to type this following command:
+
+```
+python manage.py test
+```
+
+There are 6 testsCases inside the code. All endpoints has been tested, one on each.
 
 ## Knowledge
 
@@ -82,12 +90,16 @@ python manage.py createsuperuser
 
 ![Data Modeling](https://github.com/gabrielcandrade/pizza-api/blob/master/media/database.png?raw=true)
 
+### Containers
+
+On *docker-compose.yml* there are **2 services running** on the same time. The **pizza-api** and the **pizzaapi_postgres_1**. They has a **wait** configuration (as you could see on /app/DockerFile) that ensure that the pizza-api runs all his commands after the PostgreSQL are up and connectable.
+
 ### Log Errors
 
 ```
 docker logs -f --tail 100 pizza-api
 ```
 
-## Credits
+## Creator
 
 * **Gabriel Andrade** - [Back-end Developer](https://github.com/gabrielcandrade/)
