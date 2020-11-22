@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     'rest_framework',
     'flavorsApp',
     'sizesApp',
@@ -43,8 +44,13 @@ INSTALLED_APPS = [
     'ordersApp',
     'addressApp',
     'clientsApp',
-    
 ]
+
+# For Global filter on all endpoints
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
