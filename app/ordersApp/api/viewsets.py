@@ -25,8 +25,18 @@ class OrderViewSet(ModelViewSet):
         data = {}
         if (order.status == 'on_delivery' or order.status == 'delivered'):
             data['message'] = "The order: " + str(order.id) + " just left for delivery or has already been delivered, cannot be updated! Sorry."
-            return Response({'message': message}, status=HTTP_405_METHOD_NOT_ALLOWED)
+            return Response(data, status=HTTP_405_METHOD_NOT_ALLOWED)
         return super(OrderViewSet, self).update(request, *args, **kwargs)
+
+    # HTTP PATCH
+    def partial_update(self, request, *args, **kwargs):
+        order = Order.objects.get(pk = kwargs.get('pk'))
+        data = {}
+        if (order.status == 'on_delivery' or order.status == 'delivered'):
+            data['message'] = "The order: " + str(order.id) + " just left for delivery or has already been delivered, cannot be updated! Sorry."
+            return Response(data, status=HTTP_405_METHOD_NOT_ALLOWED)
+        return super(OrderViewSet, self).partial_update(request, *args, **kwargs)
+
 
     @action(methods=['POST'], detail=True)
     def next_status(self, request, pk=None):
