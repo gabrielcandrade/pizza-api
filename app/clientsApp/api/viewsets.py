@@ -15,4 +15,4 @@ class ClientViewSet(ModelViewSet):
     # Filter plugin
     filter_backends = (DjangoFilterBackend,SearchFilter,)
     filter_fields = ('address', 'name', 'birth_date', 'client_since', 'is_vip')
-    search_fields = ('name')
+    search_fields = ('name', 'address')

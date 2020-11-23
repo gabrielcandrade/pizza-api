@@ -163,12 +163,13 @@ I've made all the tests on Postman and attached below you can download my Worksp
 
 - **Client List**
     - **Method:** GET
-    - **URL:** http://localhost:8005/api/address/
+    - **URL:** http://localhost:8005/api/client/
     - **Filter Parameters:** *(optional)*
-        - ?city= 
-        - ?state_province=
-        - ?postal_code=
-        - ?country=
+        - ?address= 
+        - ?name=
+        - ?birth_date=
+        - ?client_since=
+        - ?is_vip=
         - ?search=
     - **Returns:**
         - **200** - OK
@@ -176,7 +177,7 @@ I've made all the tests on Postman and attached below you can download my Worksp
 
 - **Client Object**
     - **Method:** GET / POST / PUT / PATCH / DELETE
-    - **URL:** http://localhost:8005/api/address/<address_id>/
+    - **URL:** http://localhost:8005/api/client/<client_id>/
     - **Returns:**
         - **200** - OK
         - **201** - CREATED
